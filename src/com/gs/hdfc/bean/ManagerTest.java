@@ -14,6 +14,7 @@ public class ManagerTest {
 		
 	}
 
+	//test
 	private void displayAllManagers() {
 
 		Manager[] managers = managerServiceImpl.getAllManagerByEvenAge();
