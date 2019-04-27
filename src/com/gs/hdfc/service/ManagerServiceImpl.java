@@ -20,7 +20,7 @@ public class ManagerServiceImpl {
 	public Manager[] findAll() {
 		return managerDAOImpl.findAll();
 	}
-
+    
 	public String[] getProjectStartingWithByManagerId(long id, String startingStr) {
 
 		Manager manager = findById(id);
@@ -53,6 +53,11 @@ public class ManagerServiceImpl {
 		}
 		return managers2Return;
 
+	}
+	
+	public String update(Manager manager){
+		Manager[]  showManager  = managerDAOImpl.update(manager);
+		return "Updated";
 	}
 
 }

@@ -11,6 +11,8 @@ public class ManagerTest {
 		ManagerTest managerTest = new ManagerTest();
 
 		managerTest.displayAllManagers();
+		managerTest.updateManager();
+		managerTest.displayAllManagers();
 		
 	}
 
@@ -37,8 +39,15 @@ public class ManagerTest {
 
 			}
 
-		}
-
+		}	
 	}
+	
+	//Update Manager
+	private void updateManager(){
+		Manager m1 = new Manager(1, "Hansnath", 30, 36000.35, 'M', 7.3, new String[] {"S1","SP2"},
+				new long[] { 234234, 2342455, 876786 });
+		System.out.println(managerServiceImpl.update(m1));
+	}
+	
 
 }

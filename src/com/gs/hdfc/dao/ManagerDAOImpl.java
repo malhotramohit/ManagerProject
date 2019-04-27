@@ -44,6 +44,25 @@ public class ManagerDAOImpl {
 	}
 
 	// update
+	public Manager[] update(Manager manager){
+		//Get all data from database
+		Manager[] allManagers  = VirtualDatabaseUtil.getManagerTable();
+		for(int i = 0; i < allManagers.length; i++){
+			if(allManagers[i].getManagerId() == manager.getManagerId()){
+				allManagers[i] = manager;
+				break;
+				/*allManagers[i].setAge(manager.getAge());
+				allManagers[i].setGender(manager.getGender());
+				allManagers[i].setGender(manager.getGender());
+				allManagers[i].setGender(manager.getGender());
+				allManagers[i].setGender(manager.getGender());
+				allManagers[i].setGender(manager.getGender());
+				allManagers[i].setGender(manager.getGender());*/
+			}
+				
+		}
+		return allManagers;
+	}
 	// delete
 
 }
