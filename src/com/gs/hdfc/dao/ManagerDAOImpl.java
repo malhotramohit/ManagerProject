@@ -3,7 +3,7 @@ package com.gs.hdfc.dao;
 import com.gs.hdfc.bean.Manager;
 import com.gs.hdfc.util.VirtualDatabaseUtil;
 
-public class ManagerDAOImpl {
+public class ManagerDAOImpl implements ManagerDAO{
 
 	// create
 	public void save(Manager manager) {
@@ -64,5 +64,10 @@ public class ManagerDAOImpl {
 		return allManagers;
 	}
 	// delete
+
+	public Manager delete(Manager manager) {
+		
+		return null;
+	}
 
 }

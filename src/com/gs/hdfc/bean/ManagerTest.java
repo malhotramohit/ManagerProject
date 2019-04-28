@@ -11,6 +11,7 @@ public class ManagerTest {
 		ManagerTest managerTest = new ManagerTest();
 
 		managerTest.displayAllManagers();
+		System.out.println(ManagerConstants.MANAGER_ID + "::");
 		managerTest.updateManager();
 		managerTest.displayAllManagers();
 		
