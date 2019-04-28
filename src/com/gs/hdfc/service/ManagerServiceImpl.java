@@ -1,6 +1,7 @@
 package com.gs.hdfc.service;
 
 import com.gs.hdfc.bean.Manager;
+
 import com.gs.hdfc.dao.ManagerDAO;
 import com.gs.hdfc.dao.ManagerDAOImpl;
 import com.gs.hdfc.util.Utility;
@@ -8,7 +9,7 @@ import com.gs.hdfc.util.Utility;
 public class ManagerServiceImpl {
 
 	private ManagerDAO managerDAOImpl = new ManagerDAOImpl();
-
+	
 	public void save(Manager manager) {
 		// Dao layers save
 		managerDAOImpl.save(manager);
@@ -57,8 +58,10 @@ public class ManagerServiceImpl {
 	}
 	
 	public String update(Manager manager){
-		Manager[]  showManager  = managerDAOImpl.update(manager);
+		managerDAOImpl.update(manager);
 		return "Updated";
 	}
+	
+	
 
 }

@@ -70,4 +70,5 @@ public class ManagerDAOImpl implements ManagerDAO{
 		return null;
 	}
 
+	
 }

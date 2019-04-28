@@ -12,6 +12,7 @@ public class ManagerConstants {
 	public static String MANAGER_PROJECTS = "Manager Projects Accomplished";
 	public static String MANAGER_NUMBERS = "Manager Phone Numbers";
 	public static String PROJECT_NAME = "Project Name";
+	public static String PROJECT_ID = "Project Id";
 	
 
 	
