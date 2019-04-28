@@ -3,7 +3,7 @@ package com.gs.hdfc.dao;
 import com.gs.hdfc.bean.Manager;
 import com.gs.hdfc.util.VirtualDatabaseUtil;
 
-public class ManagerDAOImpl {
+public class ManagerDAOImpl implements ManagerDAO{
 
 	// create
 	public void save(Manager manager) {
@@ -44,6 +44,18 @@ public class ManagerDAOImpl {
 	}
 
 	// update
+	public void updateManager(Manager man){
+		Manager[] managerTable = VirtualDatabaseUtil.getManagerTable();
+		// need to scan complete table
+		for (int i = 0; i < managerTable.length; i++) {
+			if (managerTable[i].getManagerId() == man.getManagerId()) {
+				managerTable[i] = man;
+				break;
+			}
+		}
+	}
 	// delete
-
+	public void deleteMan(){
+		
+	}
 }

@@ -2,6 +2,7 @@ package com.gs.hdfc.bean;
 
 import com.gs.hdfc.service.ManagerServiceImpl;
 import com.gs.hdfc.util.ManagerConstants;
+import com.gs.hdfc.util.VirtualDatabaseUtil;
 
 public class ManagerTest {
 
@@ -9,7 +10,10 @@ public class ManagerTest {
 
 	public static void main(String[] args) {
 		ManagerTest managerTest = new ManagerTest();
-
+		
+		managerTest.displayAllManagers();
+		System.out.println("After Update");
+		managerTest.updateManager();
 		managerTest.displayAllManagers();
 		
 	}
@@ -17,8 +21,8 @@ public class ManagerTest {
 	//test
 	private void displayAllManagers() {
 
-		Manager[] managers = managerServiceImpl.getAllManagerByEvenAge();
-
+//		Manager[] managers = managerServiceImpl.getAllManagerByEvenAge();
+		Manager[] managers = VirtualDatabaseUtil.getManagerTable();
 		for (int i = 0; i < managers.length; i++) {
 
 			if (null != managers[i]) {
@@ -39,6 +43,11 @@ public class ManagerTest {
 
 		}
 
+	}
+	
+	private void updateManager() {
+		Manager man = new Manager(1, "Jaydeep", 28, 25000, 'M', 5,new String[]{"P1","P2"}, new long[]{9538877,655456464,564564});
+		managerServiceImpl.updateManager(man);
 	}
 
 }

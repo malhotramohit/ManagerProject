@@ -3,10 +3,12 @@ package com.gs.hdfc.service;
 import com.gs.hdfc.bean.Manager;
 import com.gs.hdfc.dao.ManagerDAOImpl;
 import com.gs.hdfc.util.Utility;
+import com.gs.hdfc.util.VirtualDatabaseUtil;
+import com.gs.hdfc.dao.ManagerDAO;
 
 public class ManagerServiceImpl {
 
-	private ManagerDAOImpl managerDAOImpl = new ManagerDAOImpl();
+	private ManagerDAO managerDAOImpl = new ManagerDAOImpl();
 
 	public void save(Manager manager) {
 		// Dao layers save
@@ -54,5 +56,9 @@ public class ManagerServiceImpl {
 		return managers2Return;
 
 	}
-
+	
+	public void updateManager(Manager man){
+		managerDAOImpl.updateManager(man);
+		
+	}
 }
