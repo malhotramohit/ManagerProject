@@ -1,6 +1,7 @@
 package com.gs.hdfc.service;
 
 import com.gs.hdfc.bean.Manager;
+import com.gs.hdfc.bean.Project;
 import com.gs.hdfc.dao.ManagerDAOImpl;
 import com.gs.hdfc.util.Utility;
 import com.gs.hdfc.util.VirtualDatabaseUtil;
@@ -26,12 +27,12 @@ public class ManagerServiceImpl {
 	public String[] getProjectStartingWithByManagerId(long id, String startingStr) {
 
 		Manager manager = findById(id);
-		String[] projects = manager.getProjects();
+		Project[] projects = manager.getProjects();
 		String[] projectsToReturn = new String[projects.length];
 		int index = 0;
 		for (int i = 0; i < projects.length; i++) {
-			if (projects[i].startsWith(startingStr)) {
-				projectsToReturn[index] = projects[i];
+			if (projects[i].getName().startsWith(startingStr)) {
+				projectsToReturn[index] = projects[i].getName();
 				index++;
 			}
 		}

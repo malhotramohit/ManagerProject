@@ -32,10 +32,11 @@ public class ManagerTest {
 				System.out.println(ManagerConstants.MANAGER_AGE + "::" + managers[i].getAge());
 				System.out.println(ManagerConstants.MANAGER_SALARY + "::" + managers[i].getSalary());
 				System.out.println(ManagerConstants.MANAGER_PROJECTS + "::");
-				String[] projects = managerServiceImpl.getProjectStartingWithByManagerId(managers[i].getManagerId(), "S");
+				//String[] projects = managerServiceImpl.getProjectStartingWithByManagerId(managers[i].getManagerId(), "S");
+				Project[] projects = managers[i].getProjects();
 				for (int j = 0; j < projects.length; j++) {
 					if (null != projects[i]) {
-						System.out.println(ManagerConstants.PROJECT_NAME + "::" + projects[j]);
+						System.out.println(ManagerConstants.PROJECT_NAME + "::" + projects[j].getName());
 					}
 				}
 
@@ -46,8 +47,9 @@ public class ManagerTest {
 	}
 	
 	private void updateManager() {
-		Manager man = new Manager(1, "Jaydeep", 28, 25000, 'M', 5,new String[]{"P1","P2"}, new long[]{9538877,655456464,564564});
+		Manager man = new Manager(1, "Jaydeep", 28, 25000, 'M', 5,VirtualDatabaseUtil.getProjectTable(), new long[]{9538877,655456464,564564});
 		managerServiceImpl.updateManager(man);
 	}
-
+	
+	
 }
