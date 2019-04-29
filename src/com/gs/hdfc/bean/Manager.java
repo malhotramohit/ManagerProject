@@ -2,6 +2,7 @@ package com.gs.hdfc.bean;
 
 public class Manager {
 
+	//test pierre
 	private long managerId;
 	private String name;
 	private int age;
