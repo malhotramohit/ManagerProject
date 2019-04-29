@@ -4,46 +4,49 @@ import com.gs.hdfc.bean.Manager;
 import com.gs.hdfc.util.VirtualDatabaseUtil;
 
 public class ManagerDAOImpl {
-
-	// create
-	public void save(Manager manager) {
-		// we will iterate the whole array
-		// we will check for first empty slot
-		Manager[] managerTable = VirtualDatabaseUtil.getManagerTable();
-		// need to scan complete table
-		int emptySlotNum = 0;
-		for (int i = 0; i < managerTable.length; i++) {
-			if (managerTable[i] == null) {
-				emptySlotNum = i;
+		
+	
+	void save(Manager manager)
+	{
+		System.out.println("");
+		Manager mangerTable[] = VirtualDatabaseUtil.getManagerTable();
+		int checkFreesSlot = 0;
+		
+		for(int i=0;i<mangerTable.length;i++)
+		{
+			if(mangerTable[i]==null)
+			{
+				checkFreesSlot = i;
 				break;
 			}
 		}
-
-		managerTable[emptySlotNum] = manager;
+		mangerTable[checkFreesSlot] = manager; 
+		
 	}
-
-	// read
-	// findById
-	public Manager findById(long id) {
-		Manager managerObjToReturn = null;
-		// need to get manager table
-		Manager[] managerTable = VirtualDatabaseUtil.getManagerTable();
-		// need to scan complete table
-		for (int i = 0; i < managerTable.length; i++) {
-			if (managerTable[i].getManagerId() == id) {
-				managerObjToReturn = managerTable[i];
+	
+	public Manager findByID(long id)
+	{
+		Manager objToReturn=null;
+		//Get Manager Table
+		Manager man[] = VirtualDatabaseUtil.getManagerTable();
+		
+		for(int i=0;i<man.length;i++)
+		{
+			if(man[i].getManagerID()==id)
+			{
+				System.out.println("Eureka Found It");
+				objToReturn= man[i];
 				break;
 			}
 		}
-		return managerObjToReturn;
+		
+		return objToReturn;
 	}
-
-	// findAll
-	public Manager[] findAll() {
-		return VirtualDatabaseUtil.getManagerTable();
+	
+	public Manager[] findAll()
+	{
+		System.out.println("Inside findALL Method");
+		Manager manToreturn[]=VirtualDatabaseUtil.getManagerTable();
+		return manToreturn;
 	}
-
-	// update
-	// delete
-
 }
