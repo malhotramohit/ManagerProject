@@ -14,6 +14,7 @@ public class Manager {
 	/**
 	 * 
 	 */
+	//Manager operation
 	public Manager() {
 		// TODO Auto-generated constructor stub
 	}
