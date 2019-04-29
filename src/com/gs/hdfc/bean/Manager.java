@@ -1,6 +1,8 @@
 package com.gs.hdfc.bean;
 
 public class Manager {
+	
+	// nishus comment
 
 	private long managerId;
 	private String name;
