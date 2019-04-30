@@ -1,6 +1,5 @@
 package com.gs.hdfc.bean;
 
-import com.gs.hdfc.dao.ManagerDAOImpl;
 import com.gs.hdfc.service.ManagerServiceImpl;
 import com.gs.hdfc.util.ManagerConstants;
 import com.gs.hdfc.util.VirtualDatabaseUtil;
@@ -8,7 +7,7 @@ import com.gs.hdfc.util.VirtualDatabaseUtil;
 public class ManagerTest {
 	
 	static ManagerServiceImpl managerServiceImpl = new ManagerServiceImpl();
-	static ManagerDAOImpl managerDAOImpl = new ManagerDAOImpl();
+	//static ManagerDAOImpl managerDAOImpl = new ManagerDAOImpl();
 	static ManagerConstants managerconstant = new ManagerConstants();
  	
 	public static void main(String[] args) {
@@ -35,6 +34,11 @@ public class ManagerTest {
 			{
 				System.out.println(managerconstant.MANAGER_NAME+":"+man[i].getName());
 				System.out.println(managerconstant.MANAGER_AGE+":"+man[i].getAge());
+				System.out.println(managerconstant.MANAGER_GENDER+":"+man[i].getGender());
+				System.out.println(managerconstant.MANAGER_EXP+":"+man[i].getYearOfExp());
+				System.out.println(managerconstant.MANAGER_SALARY+":"+man[i].getSalary());
+				System.out.println(managerconstant.MANAGER_NUMBERS+":"+man[i].getPhonenumbers());
+				System.out.println(managerconstant.PROJECT_NAME+":"+man[i].getProjects());
 			}
 		}
 		

@@ -55,8 +55,8 @@ public class ManagerServiceImpl {
 			else
 			{
 				//int age = man[i].getAge();
-				Utility utility = new Utility();
-				boolean res=utility.isEven(man[i].getAge());
+				//Utility utility = new Utility();
+				boolean res=Utility.isEven(man[i].getAge());
 				if(res==true)
 				{
 					manTupleTOReturn[tuple] = man[i];

@@ -7,7 +7,7 @@ public class Utility {
 		System.out.println("Inside Utility Constructor");
 	}
 	
-	public boolean isEven(int age)
+	public static boolean isEven(int age)
 	{
 		System.out.println("Inside isEven Method");
 		if(age%2==0)
