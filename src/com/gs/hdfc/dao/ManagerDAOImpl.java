@@ -6,7 +6,7 @@ import com.gs.hdfc.util.VirtualDatabaseUtil;
 public class ManagerDAOImpl {
 		
 	
-	void save(Manager manager)
+	public void save(Manager manager)
 	{
 		System.out.println("");
 		Manager mangerTable[] = VirtualDatabaseUtil.getManagerTable();

@@ -18,7 +18,7 @@ public class VirtualDatabaseUtil {
 		
 		managerTable[0] = manager1;
 		
-		Manager manager2 = new Manager(1002, "Shagun", 26, 88877445.254, 'F', 6.5, p2, n2);
+		Manager manager2 = new Manager(1002, "Shagun", 27, 88877445.254, 'F', 6.5, p2, n2);
 		
 		managerTable[1]=manager2;
 	}
