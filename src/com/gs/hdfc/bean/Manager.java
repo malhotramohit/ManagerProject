@@ -1,6 +1,6 @@
 package com.gs.hdfc.bean;
 
-public class Manager {
+public class Manager{
 	
 	private long managerID;
 	private String name;
@@ -8,9 +8,16 @@ public class Manager {
 	private double salary;
 	private char gender;
 	private double yearOfExp;
-	private String projects[];
+	//private String projects[];
+	private Project[] project;
 	private long phonenumbers[];
 	
+	public Project[] getProject() {
+		return project;
+	}
+	public void setProject(Project[] project) {
+		this.project = project;
+	}
 	public long getManagerID() {
 		return managerID;
 	}
@@ -47,24 +54,25 @@ public class Manager {
 	public void setYearOfExp(double yearOfExp) {
 		this.yearOfExp = yearOfExp;
 	}
-	public String[] getProjects() {
-		return projects;
-	}
-	public void setProjects(String[] projects) {
-		this.projects = projects;
-	}
+	//public String[] getProjects() {
+		//return projects;
+	
+	//public void setProjects(String[] projects) {
+	//	this.projects = projects;
 	public long[] getPhonenumbers() {
 		return phonenumbers;
 	}
 	public void setPhonenumbers(long[] phonenumbers) {
 		this.phonenumbers = phonenumbers;
 	}
+	
+	
 	//Constructor
 	public Manager() {
 		System.out.println("Inside Manager Non-Parameterized Constructor");
 	}
 	//Constructor Non- Parameterized
-	public Manager(long managerID, String name, int age, double salary, char gender, double yearOfExp,
+	/*public Manager(long managerID, String name, int age, double salary, char gender, double yearOfExp,
 			String[] projects, long[] phonenumbers) {
 		this.managerID = managerID;
 		this.name = name;
@@ -72,9 +80,23 @@ public class Manager {
 		this.salary = salary;
 		this.gender = gender;
 		this.yearOfExp = yearOfExp;
-		this.projects = projects;
+		//this.projects = projects;
+		this.phonenumbers = phonenumbers;
+	}*/
+	public Manager(long managerID, String name, int age, double salary, char gender, double yearOfExp,
+			Project[] project, long[] phonenumbers) {
+		super();
+		this.managerID = managerID;
+		this.name = name;
+		this.age = age;
+		this.salary = salary;
+		this.gender = gender;
+		this.yearOfExp = yearOfExp;
+		this.project = project;
 		this.phonenumbers = phonenumbers;
 	}
+	
+	
 	
 	
 }
