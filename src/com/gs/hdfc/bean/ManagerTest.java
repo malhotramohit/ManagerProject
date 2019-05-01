@@ -21,6 +21,8 @@ public class ManagerTest {
 
 		for (int i = 0; i < managers.length; i++) {
 
+			
+			
 			if (null != managers[i]) {
 				System.out.println("-----Detail-----"+i);
 				System.out.println(ManagerConstants.MANAGER_ID + "::" + managers[i].getManagerId());
