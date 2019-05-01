@@ -72,17 +72,7 @@ public class Manager{
 		System.out.println("Inside Manager Non-Parameterized Constructor");
 	}
 	//Constructor Non- Parameterized
-	/*public Manager(long managerID, String name, int age, double salary, char gender, double yearOfExp,
-			String[] projects, long[] phonenumbers) {
-		this.managerID = managerID;
-		this.name = name;
-		this.age = age;
-		this.salary = salary;
-		this.gender = gender;
-		this.yearOfExp = yearOfExp;
-		//this.projects = projects;
-		this.phonenumbers = phonenumbers;
-	}*/
+	
 	public Manager(long managerID, String name, int age, double salary, char gender, double yearOfExp,
 			Project[] project, long[] phonenumbers) {
 		super();
