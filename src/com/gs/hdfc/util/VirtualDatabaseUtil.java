@@ -10,6 +10,17 @@ public class VirtualDatabaseUtil {
 	
 
 	private static long id;
+	
+	static {
+
+		projectTable = new Project[5];
+
+		projectTable[0] = new Project(1, "P1");
+
+		projectTable[1] = new Project(2, "P2");
+
+		projectTable[2] = new Project(3, "P3");	
+	}
 
 	static {
 
@@ -55,17 +66,7 @@ public class VirtualDatabaseUtil {
 	}
 	
 	
-	static {
-
-		projectTable = new Project[5];
-
-		projectTable[0] = new Project(1, "P1");
-
-		projectTable[1] = new Project(2, "P2");
-
-		projectTable[2] = new Project(3, "P3");	
-	}
-	
+		
 	/**
 	 * @return the managerTable
 	 */
