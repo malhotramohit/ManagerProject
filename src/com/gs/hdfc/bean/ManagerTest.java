@@ -17,9 +17,10 @@ public class ManagerTest {
 		managerTest.displayAllManagers();
 		System.out.println(ManagerConstants.MANAGER_ID + "::");
 		managerTest.updateManager();
-		managerTest.displayAllManagers();
 		managerTest.saveProject();
 		managerTest.displayAllProjects();
+		managerTest.displayAllManagers();
+		
 	}
 
 	//test
@@ -36,10 +37,10 @@ public class ManagerTest {
 				System.out.println(ManagerConstants.MANAGER_AGE + "::" + managers[i].getAge());
 				System.out.println(ManagerConstants.MANAGER_SALARY + "::" + managers[i].getSalary());
 				System.out.println(ManagerConstants.MANAGER_PROJECTS + "::");
-				String[] projects = managerServiceImpl.getProjectStartingWithByManagerId(managers[i].getManagerId(), "S");
+				Project[] projects = managerServiceImpl.getProjectStartingWithByManagerId(managers[i].getManagerId(), "S");
 				for (int j = 0; j < projects.length; j++) {
-					if (null != projects[i]) {
-						System.out.println(ManagerConstants.PROJECT_NAME + "::" + projects[j]);
+					if (null != projects && projects[j] != null) {
+						System.out.println(ManagerConstants.PROJECT_NAME + "::" + projects[j].getProjectName());
 					}
 				}
 
@@ -50,8 +51,8 @@ public class ManagerTest {
 	
 	//Update Manager
 	private void updateManager(){
-		//Project project4 = new Project('2', "Project name 1");
-		Manager m1 = new Manager(1, "Hansnath", 30, 36000.35, 'M', 7.3, new String[] {"S1","SP2"},
+		Project[] project4 = projectServiceImpl.findAll();
+		Manager m1 = new Manager(1, "Hansnath", 30, 36000.35, 'M', 7.3, project4,
 				new long[] { 234234, 2342455, 876786 });
 		System.out.println(managerServiceImpl.update(m1));
 	}

@@ -1,6 +1,7 @@
 package com.gs.hdfc.service;
 
 import com.gs.hdfc.bean.Manager;
+import com.gs.hdfc.bean.Project;
 
 import com.gs.hdfc.dao.ManagerDAO;
 import com.gs.hdfc.dao.ManagerDAOImpl;
@@ -23,17 +24,22 @@ public class ManagerServiceImpl {
 		return managerDAOImpl.findAll();
 	}
     
-	public String[] getProjectStartingWithByManagerId(long id, String startingStr) {
+	public Project[] getProjectStartingWithByManagerId(long id, String startingStr) {
 
 		Manager manager = findById(id);
-		String[] projects = manager.getProjects();
-		String[] projectsToReturn = new String[projects.length];
-		int index = 0;
+		Project[] projects = manager.getProjects();
+		//Project[] projectsToReturn = new Project[];
+		Project[] projectsToReturn = null;
 		for (int i = 0; i < projects.length; i++) {
-			if (projects[i].startsWith(startingStr)) {
-				projectsToReturn[index] = projects[i];
-				index++;
+			if(projects != null){
+				if(projects[i] != null){
+					if (projects[i].getProjectName().startsWith(startingStr)) {
+						projectsToReturn = projects;
+					}
+				}
+				
 			}
+			
 		}
 		return projectsToReturn;
 
