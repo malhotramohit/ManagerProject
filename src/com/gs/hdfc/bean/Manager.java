@@ -1,4 +1,6 @@
 package com.gs.hdfc.bean;
+import java.util.List;;
+
 
 public class Manager {
 
@@ -8,7 +10,7 @@ public class Manager {
 	private double salary;
 	private char gender;
 	private double yearOfExp;
-	private String[] projects;
+	private List<String> projects;
 	private long[] phonenumbers;
 
 	/**
@@ -29,7 +31,7 @@ public class Manager {
 	 * @param phonenumbers
 	 */
 	public Manager(long managerId, String name, int age, double salary, char gender, double yearOfExp,
-			String[] projects, long[] phonenumbers) {
+			 List<String> projects, long[] phonenumbers) {
 		this.managerId = managerId;
 		this.name = name;
 		this.age = age;
@@ -85,7 +87,7 @@ public class Manager {
 	/**
 	 * @return the projects
 	 */
-	public String[] getProjects() {
+	public List<String> getProjects() {
 		return projects;
 	}
 
@@ -148,7 +150,7 @@ public class Manager {
 	 * @param projects
 	 *            the projects to set
 	 */
-	public void setProjects(String[] projects) {
+	public void setProjects(List<String> projects) {
 		this.projects = projects;
 	}
 

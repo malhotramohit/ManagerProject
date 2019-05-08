@@ -1,5 +1,9 @@
 package com.gs.hdfc.service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import com.gs.hdfc.bean.Manager;
 import com.gs.hdfc.dao.ManagerDAOImpl;
 import com.gs.hdfc.util.Utility;
@@ -17,40 +21,39 @@ public class ManagerServiceImpl {
 		return managerDAOImpl.findById(id);
 	}
 
-	public Manager[] findAll() {
+	public List<Manager> findAll() {
 		return managerDAOImpl.findAll();
 	}
 
-	public String[] getProjectStartingWithByManagerId(long id, String startingStr) {
+	public List<String> getProjectStartingWithByManagerId(long id, String startingStr) {
 
 		Manager manager = findById(id);
-		String[] projects = manager.getProjects();
-		String[] projectsToReturn = new String[projects.length];
-		int index = 0;
-		for (int i = 0; i < projects.length; i++) {
-			if (projects[i].startsWith(startingStr)) {
-				projectsToReturn[index] = projects[i];
-				index++;
+		List<String> projects = manager.getProjects();
+		List<String> projectsToReturn = new ArrayList<String>(projects.size());
+
+		Iterator<String> iterator = projects.iterator();
+		while (iterator.hasNext()) {
+			String project = iterator.next();
+			if (project.startsWith(startingStr)) {
+				projectsToReturn.add(project);
 			}
 		}
+
 		return projectsToReturn;
 
 	}
 
-	public Manager[] getAllManagerByEvenAge() {
+	public List<Manager> getAllManagerByEvenAge() {
 
-		Manager[] managers = managerDAOImpl.findAll();
-		Manager[] managers2Return = new Manager[managers.length];
-		int index = 0;
-		for (int i = 0; i < managers.length; i++) {
-			if (null != managers[i]) {
-				int age = managers[i].getAge();
-				if (Utility.isEvenNumber(age)) {
-					managers2Return[index] = managers[i];
-					index++;
-				}
+		List<Manager> managers = managerDAOImpl.findAll();
+		List<Manager> managers2Return = new ArrayList<Manager>(managers.size());
+
+		for (Manager manager : managers) {
+			if (Utility.isEvenNumber(manager.getAge())) {
+				managers2Return.add(manager);
 			}
 		}
+
 		return managers2Return;
 
 	}

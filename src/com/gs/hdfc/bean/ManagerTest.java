@@ -1,5 +1,7 @@
 package com.gs.hdfc.bean;
 
+import java.util.List;
+
 import com.gs.hdfc.service.ManagerServiceImpl;
 import com.gs.hdfc.util.ManagerConstants;
 
@@ -11,27 +13,30 @@ public class ManagerTest {
 		ManagerTest managerTest = new ManagerTest();
 
 		managerTest.displayAllManagers();
-		
+
 	}
 
-	//test
+	// test
 	private void displayAllManagers() {
 
-		Manager[] managers = managerServiceImpl.getAllManagerByEvenAge();
+		List<Manager> managers = managerServiceImpl.getAllManagerByEvenAge();
 
-		for (int i = 0; i < managers.length; i++) {
+		for (int i = 0; i < managers.size(); i++) {
 
-			if (null != managers[i]) {
-				System.out.println("-----Detail-----"+i);
-				System.out.println(ManagerConstants.MANAGER_ID + "::" + managers[i].getManagerId());
-				System.out.println(ManagerConstants.MANAGER_NAME + "::" + managers[i].getName());
-				System.out.println(ManagerConstants.MANAGER_AGE + "::" + managers[i].getAge());
-				System.out.println(ManagerConstants.MANAGER_SALARY + "::" + managers[i].getSalary());
+			if (null != managers.get(i)) {
+				System.out.println("-----Detail-----" + i);
+				System.out.println(ManagerConstants.MANAGER_ID + "::" + managers.get(i).getManagerId());
+				System.out.println(ManagerConstants.MANAGER_NAME + "::" + managers.get(i).getName());
+				System.out.println(ManagerConstants.MANAGER_AGE + "::" + managers.get(i).getAge());
+				System.out.println(ManagerConstants.MANAGER_SALARY + "::" + managers.get(i).getSalary());
 				System.out.println(ManagerConstants.MANAGER_PROJECTS + "::");
-				String[] projects = managerServiceImpl.getProjectStartingWithByManagerId(managers[i].getManagerId(), "S");
-				for (int j = 0; j < projects.length; j++) {
-					if (null != projects[i]) {
-						System.out.println(ManagerConstants.PROJECT_NAME + "::" + projects[j]);
+				List<String> projects = managerServiceImpl
+						.getProjectStartingWithByManagerId(managers.get(i).getManagerId(), "S");
+				// managers.get(i).getProjects();
+				// .getProjectStartingWithByManagerId(managers.get(i).getManagerId(), "S");
+				for (int j = 0; j < projects.size(); j++) {
+					if (null != projects.get(j)) {
+						System.out.println(ManagerConstants.PROJECT_NAME + "::" + projects.get(j));
 					}
 				}
 
